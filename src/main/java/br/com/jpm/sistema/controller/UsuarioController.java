@@ -6,6 +6,7 @@ import br.com.jpm.sistema.service.UsuarioService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,9 +26,32 @@ public class UsuarioController {
          return ResponseEntity.ok(usuarioService.findByIdDto(usuarioId));
     }
 
+    /**
+     * CREATE
+     */
+
     @PostMapping
     public ResponseEntity<?> create(@Valid @RequestBody UsuarioRequestDTO dto) {
         return ResponseEntity.ok(usuarioService.create(dto));
 
+    }
+
+    /**
+     * DELETE
+     */
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Long id) {
+        usuarioService.delete(id);
+    }
+
+    /**
+     * UPDATE
+     */
+
+    @PutMapping("/{usuarioId}")
+    public ResponseEntity<UsuarioResponseDTO> update(@RequestBody UsuarioRequestDTO dto) {
+        return ResponseEntity.ok(usuarioService.update(dto));
     }
 }

@@ -11,5 +11,5 @@ public class PerfilResponseDTO {
 
     private String bio;
     private String foto;
-    private UsuarioResponseDTO usuario;
+    private Long usuarioId;
 }

@@ -40,6 +40,7 @@ public class PerfilFactory {
         responseDto.setFoto(perfil.getFoto());
 
         if (perfil.getUsuario() != null){
+            responseDto.setUsuarioId(perfil.getUsuario().getId());
 
         }
         return responseDto;

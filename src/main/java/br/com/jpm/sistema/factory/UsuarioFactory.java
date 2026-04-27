@@ -53,4 +53,12 @@ public class UsuarioFactory {
         return dto;
     }
 
+    public static Usuario updateEntity(Usuario usuario, UsuarioRequestDTO dto) {
+        usuario.setNome(dto.getNome());
+        usuario.setEmail(dto.getEmail());
+        usuario.setSenha(dto.getSenha());
+
+        return usuario;
+    }
+
 }

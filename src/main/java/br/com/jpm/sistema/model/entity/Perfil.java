@@ -22,7 +22,8 @@ public class Perfil {
     @Column(nullable = false)
     private String foto;
 
-    @OneToOne(mappedBy = "perfil")
+    @OneToOne
+    @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
     public Perfil(String bio, String foto) {
