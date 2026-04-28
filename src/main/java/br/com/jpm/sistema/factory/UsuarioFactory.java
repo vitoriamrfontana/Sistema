@@ -47,8 +47,8 @@ public class UsuarioFactory {
         dto.setEmail(usuario.getEmail());
         dto.setSenha(usuario.getSenha());
 
-        if (usuario.getPerfil() != null){
-            dto.setPerfil(PerfilFactory.entityToResponse(usuario.getPerfil()));
+        if (usuario.getPerfil() != null) {
+            dto.setPerfil(PerfilFactory.entityToResponseSimples(usuario.getPerfil()));
         }
         return dto;
     }

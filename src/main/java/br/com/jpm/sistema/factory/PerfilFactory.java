@@ -49,6 +49,13 @@ public class PerfilFactory {
         }
         return responseDTO;
     }
+    public static PerfilResponseDTO entityToResponseSimples(Perfil perfil) {
+        PerfilResponseDTO responseDTO = new PerfilResponseDTO();
+        responseDTO.setBio(perfil.getBio());
+        responseDTO.setFoto(perfil.getFoto());
+
+        return responseDTO;
+    }
 
     public static Perfil updateEntity(Perfil perfil, PerfilRequestDTO dto) {
         perfil.setBio(dto.getBio());
