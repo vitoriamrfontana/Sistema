@@ -53,7 +53,7 @@ public class PerfilController {
      * UPDATE
      */
 
-    @PutMapping("/{PerfilId}")
+    @PutMapping("/{perfilId}")
     public ResponseEntity<PerfilResponseDTO> update(@RequestBody PerfilRequestDTO dto) {
         return ResponseEntity.ok(perfilService.update(dto));
     }

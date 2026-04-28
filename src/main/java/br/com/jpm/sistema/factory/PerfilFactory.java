@@ -2,6 +2,7 @@ package br.com.jpm.sistema.factory;
 
 import br.com.jpm.sistema.model.dto.request.PerfilRequestDTO;
 import br.com.jpm.sistema.model.dto.response.PerfilResponseDTO;
+import br.com.jpm.sistema.model.dto.response.UsuarioResponseDTO;
 import br.com.jpm.sistema.model.entity.Perfil;
 import br.com.jpm.sistema.model.entity.Usuario;
 
@@ -35,15 +36,18 @@ public class PerfilFactory {
     }
 
     public static PerfilResponseDTO entityToResponse(Perfil perfil) {
-        PerfilResponseDTO responseDto = new PerfilResponseDTO();
-        responseDto.setBio(perfil.getBio());
-        responseDto.setFoto(perfil.getFoto());
+        PerfilResponseDTO responseDTO = new PerfilResponseDTO();
+        responseDTO.setBio(perfil.getBio());
+        responseDTO.setFoto(perfil.getFoto());
 
-        if (perfil.getUsuario() != null){
-            responseDto.setUsuarioId(perfil.getUsuario().getId());
-
+        if (perfil.getUsuario() != null) {
+            UsuarioResponseDTO dto = new UsuarioResponseDTO();
+            dto.setNome(perfil.getUsuario().getNome());
+            dto.setEmail(perfil.getUsuario().getEmail());
+            dto.setSenha(perfil.getUsuario().getSenha());
+            responseDTO.setUsuarioResponseDTO(dto);
         }
-        return responseDto;
+        return responseDTO;
     }
 
     public static Perfil updateEntity(Perfil perfil, PerfilRequestDTO dto) {

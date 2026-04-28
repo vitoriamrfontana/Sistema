@@ -39,10 +39,9 @@ public class UsuarioService {
 
     public UsuarioResponseDTO create(UsuarioRequestDTO dto){
         Usuario usuario = UsuarioFactory.dtoToEntitySetGet(dto);
+        System.out.println(usuario);
         Usuario usuarioSave = repository.save(usuario);
-        if (usuarioSave.getPerfil() == null && usuario.getPerfil() != null) {
-            usuarioSave.setPerfil(usuario.getPerfil());
-        }
+        System.out.println(usuario);
         return UsuarioFactory.entityToResponse(usuarioSave);
     }
 

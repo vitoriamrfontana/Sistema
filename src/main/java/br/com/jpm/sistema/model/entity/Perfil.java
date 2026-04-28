@@ -23,19 +23,20 @@ public class Perfil {
     private String foto;
 
     @OneToOne
-    @JoinColumn(name = "usuario_id")
+    @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
 
     public Perfil(String bio, String foto) {
         this.bio = bio;
         this.foto = foto;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return "Perfil{" +
                 "id=" + id +
-                ", bio=" + bio + '\'' +
-                ", foto=" + foto + '\'' +
+                ", bio='" + bio + '\'' +
+                ", foto='" + foto + '\'' +
                 '}';
     }
 }

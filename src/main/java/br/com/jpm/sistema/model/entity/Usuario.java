@@ -33,16 +33,15 @@ public class Usuario {
         this.email = email;
         this.senha = senha;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return "Usuario{" +
                 "id=" + id +
-                ", nome=" + nome + '\'' +
-                ", email=" + email + '\'' +
-                ", senha=" + senha + '\'' +
+                ", nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", senha='" + senha + '\'' +
+                ", perfil=" + perfil +
                 '}';
     }
-
-
-
 }
